@@ -1,0 +1,34 @@
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+  - bioconda
+dependencies:
+  - python=3.8
+  - pandas
+  - ipython
+  - ipykernel
+  - numpy
+  - scipy
+  - matplotlib
+  - r-base
+  - r-devtools
+  - six 
+  - pip: 
+    - cocopp
+    - tsai
+    - seaborn
+    - pymoo
+    - smt
+    - colorcet
+    - opfunu
+    - doe2vec
+    - ioh
+    - pflacco
+    - tqdm
+    - kiwisolver==1.4.4
+    - scipy==1.10.0
+    - optuna
+    - optuna-integration
+    - pytorchtools
+

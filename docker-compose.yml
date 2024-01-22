@@ -1,0 +1,29 @@
+version: "3.3"
+services:
+  notebook:
+    build: ./Environments
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    ports:
+      - 61058:8888
+    command: start-notebook.sh --NotebookApp.password="" --NotebookApp.token=''
+    volumes:
+      - .:/home/jovyan/work
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '10.0'
+        reservations:
+          devices:
+          - driver: nvidia
+            # that's the closest analogue to --gpus; provide
+            # an integer amount of devices or 'all'
+            count: 'all'
+            # Devices are reserved using a list of capabilities, making
+            # capabilities the only required field. A device MUST 
+            # satisfy all the requested capabilities for a successful 
+            # reservation.
+            capabilities: [gpu]
+
+

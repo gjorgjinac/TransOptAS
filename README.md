@@ -1,5 +1,5 @@
 
-#TransOptAS: Transformer-Based Algorithm Selection for Single-Objective Optimization
+# TransOptAS: Transformer-Based Algorithm Selection for Single-Objective Optimization
 
 
 This repository contains the code for a project that aims to use transformer models to select the best algorithm for solving optimization problems. 

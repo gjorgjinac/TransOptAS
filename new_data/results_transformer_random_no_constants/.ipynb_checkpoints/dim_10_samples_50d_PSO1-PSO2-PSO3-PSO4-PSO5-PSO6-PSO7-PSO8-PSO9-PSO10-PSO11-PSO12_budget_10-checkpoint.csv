@@ -1,0 +1,26 @@
+,test_benchmark,model,score,value,train_benchmark,fold,sample_count_dimension_factor,budget,d_model,d_k,d_v,fc_size,n_heads,d_ff,n_layers
+0,train,transformer,MSE,0.05452445149421692,random_no_constants,0,50,10,100,50,30,40,1,60,2
+1,train,transformer,Misrankings score,0.7129280020653822,random_no_constants,0,50,10,100,50,30,40,1,60,2
+2,train,transformer,Loss,0.8914130869712544,random_no_constants,0,50,10,100,50,30,40,1,60,2
+3,train,dummy,MSE,0.11233013868331909,random_no_constants,0,50,10,100,50,30,40,1,60,2
+4,train,dummy,Misrankings score,0.5406138057895247,random_no_constants,0,50,10,100,50,30,40,1,60,2
+5,train,dummy,Loss,0.7297132090121772,random_no_constants,0,50,10,100,50,30,40,1,60,2
+6,val,transformer,MSE,0.05627237632870674,random_no_constants,0,50,10,100,50,30,40,1,60,2
+7,val,transformer,Misrankings score,0.7205638474295191,random_no_constants,0,50,10,100,50,30,40,1,60,2
+8,val,transformer,Loss,0.8846585606286653,random_no_constants,0,50,10,100,50,30,40,1,60,2
+9,val,dummy,MSE,0.11136447638273239,random_no_constants,0,50,10,100,50,30,40,1,60,2
+10,val,dummy,Misrankings score,0.5557816975727423,random_no_constants,0,50,10,100,50,30,40,1,60,2
+11,val,dummy,Loss,0.7221663648965618,random_no_constants,0,50,10,100,50,30,40,1,60,2
+12,tune,transformer,MSE,0.06242765486240387,random_no_constants,0,50,10,100,50,30,40,1,60,2
+13,tune,transformer,Misrankings score,0.6934443444344435,random_no_constants,0,50,10,100,50,30,40,1,60,2
+14,tune,transformer,Loss,0.8804195542181166,random_no_constants,0,50,10,100,50,30,40,1,60,2
+15,tune,dummy,MSE,0.11726579815149307,random_no_constants,0,50,10,100,50,30,40,1,60,2
+16,tune,dummy,Misrankings score,0.5254275427542754,random_no_constants,0,50,10,100,50,30,40,1,60,2
+17,tune,dummy,Loss,0.7379573146467799,random_no_constants,0,50,10,100,50,30,40,1,60,2
+18,test,transformer,MSE,0.06242765486240387,random_no_constants,0,50,10,100,50,30,40,1,60,2
+19,test,transformer,Misrankings score,0.6934443444344435,random_no_constants,0,50,10,100,50,30,40,1,60,2
+20,test,transformer,Loss,0.8804195542181166,random_no_constants,0,50,10,100,50,30,40,1,60,2
+21,test,dummy,MSE,0.11726579815149307,random_no_constants,0,50,10,100,50,30,40,1,60,2
+22,test,dummy,Misrankings score,0.5254275427542754,random_no_constants,0,50,10,100,50,30,40,1,60,2
+23,test,dummy,Loss,0.7379573146467799,random_no_constants,0,50,10,100,50,30,40,1,60,2
+24,test,ELA,Loss,0.9077380588585555,random_no_constants,0,50,10,100,50,30,40,1,60,2

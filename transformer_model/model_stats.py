@@ -3,7 +3,7 @@ from tsai.all import *
 computer_setup()
 
 from torch.nn import CrossEntropyLoss, AvgPool2d,AdaptiveAvgPool2d
-
+from torch.nn.functional import softmax
    
 class OptTransStats(Module):
     def __init__(self, c_in:int, c_out:int, seq_len:int, iteration_count:int=None,
@@ -45,7 +45,6 @@ class OptTransStats(Module):
         # Encoder
         self.encoder = TSTEncoder(seq_len, d_model, n_heads, d_k=d_k, d_v=d_v, d_ff=d_ff, dropout=dropout, activation=act, n_layers=n_layers)
         #self.pooling = torch.nn.AdaptiveAvgPool1d(1)
-        
         # Head
         self.head_nf = d_model 
         if not do_regression:
@@ -55,7 +54,8 @@ class OptTransStats(Module):
                 Flatten(),
                 nn.Dropout(fc_dropout),
                 torch.nn.Linear(fc_size, c_out, bias=True),
-                SigmoidRange(*y_range)
+                torch.nn.Softmax(0)
+                #SigmoidRange(*y_range)
             )
         else:
             self.head=torch.nn.Sequential(
@@ -100,16 +100,9 @@ class OptTransStats(Module):
 
         if self.use_positional_encoding:
             u = self.dropout(u + self.W_pos)
-        #print(x.shape)
-        # Encoder
-        z = self.encoder(u)
-        #z=z[:,0,:]
 
-        #z = z.transpose(2,1).contiguous()                               # z: [bs x d_model x q_len]
-        #z=self.pooling(z.transpose(1, 2)).squeeze()
+        z = self.encoder(u)
 
         z=z.mean(dim=1).squeeze()
-        #z = self.get_stats(z)
-        # Classification/ Regression head
         z=self.head(z)
         return z

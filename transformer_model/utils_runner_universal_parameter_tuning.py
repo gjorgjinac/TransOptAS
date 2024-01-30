@@ -52,7 +52,7 @@ class UniversalRunner():
     result_dir:str
     use_positional_encoding:bool
     
-    def __init__(self,data_processor,extra_info=None, verbose=True, lr_max=0.0005, plot_training=True, use_positional_encoding=False, n_heads=1, n_layers=1, d_model=20, d_k=10, d_v=10, n_epochs=100, batch_size=8, fold=None, iteration_count=None, include_iteration_in_x=False, train_seeds=None, val_seeds=None, global_result_dir='results', aggregations=None, id_names=None, split_type=None, dropout=0.1, fc_dropout=0.1):
+    def __init__(self,data_processor,extra_info=None, verbose=True, lr_max=0.0005, plot_training=True, use_positional_encoding=False, n_heads=1, n_layers=1, d_model=20, d_k=10, d_v=10, n_epochs=100, batch_size=8, fold=None, iteration_count=None, include_iteration_in_x=False, train_seeds=None, val_seeds=None, global_result_dir='results', aggregations=None, id_names=None, split_type=None, dropout=0.1, fc_dropout=0.1,pretrained_model=None):
 
         self.verbose = verbose
         self.lr_max=lr_max
@@ -80,6 +80,7 @@ class UniversalRunner():
         self.iteration_count=iteration_count
         self.aggregations=aggregations
         os.makedirs(self.result_dir, exist_ok = True) 
+        self.model=pretrained_model
         
 
 
@@ -103,7 +104,12 @@ class UniversalRunner():
                                                   n_layers=trial.suggest_int("n_layers", 1, 3), n_epochs=200, normalize=False, reduce=False
                                                  #[trial.suggest_categorical("aggregations",["mean","max","min","std"])]
                            )
-        learner = Learner(dls, model, loss_func=calculate_loss_torch, metrics=[mse], cbs=callbacks)
+  
+        if self.data_processor.task_name!='performance_prediction':
+            learner = Learner(dls, model, loss_func=CrossEntropyLoss(), metrics=[ accuracy],  cbs=callbacks)
+        else:
+            learner = Learner(dls, model, loss_func=calculate_loss_torch, metrics=[mse,calculate_loss_torch], cbs=callbacks) 
+            
         learner.fit(self.n_epochs, lr=self.lr_max) #trial.suggest_float("lr_max", 0.00001, 0.01, step=0.0005
         probas, targets, preds = learner.get_X_preds(np.swapaxes(tune_data.x,1,2), with_decoded=True, bs=self.batch_size)
         transformer_scores = self.data_processor.evaluate_model(tune_data.y,probas,tune_data.ids,None)
@@ -113,7 +119,7 @@ class UniversalRunner():
         prune=True
         pruner = optuna.pruners.MedianPruner() if prune else optuna.pruners.NopPruner()
         study = optuna.create_study(direction="maximize", pruner=pruner, sampler=optuna.samplers.TPESampler())
-        study.optimize(partial(self.hyperparemeter_tuning_trial,dls=dls,tune_data=tune_data), n_trials=20, timeout=1200, n_jobs=1)
+        study.optimize(partial(self.hyperparemeter_tuning_trial,dls=dls,tune_data=tune_data), n_trials=10, timeout=1200, n_jobs=1)
 
         print("Number of finished trials: {}".format(len(study.trials)))
 
@@ -141,10 +147,15 @@ class UniversalRunner():
             print('Training with tuned parameters:')
             print(parameters)
             #lr=parameters['lr_max']
-            self.model=OptTransStats(dls.vars, dls.c, dls.len, n_heads=parameters['n_heads'], n_layers=parameters['n_layers'], d_model=parameters['d_model'], d_k=parameters['d_k'], d_v=parameters['d_v'], use_positional_encoding=self.use_positional_encoding, iteration_count=self.iteration_count, aggregations=["mean","max","min","std"], fc_size=parameters['fc_size'], d_ff=parameters['d_ff'] , do_regression=self.data_processor.task_name=='performance_prediction')
+            if self.model is None:
+                print('No pretrained model provided. Reinitializing model from scratch')
+                self.model=OptTransStats(dls.vars, dls.c, dls.len, n_heads=parameters['n_heads'], n_layers=parameters['n_layers'], d_model=parameters['d_model'], d_k=parameters['d_k'], d_v=parameters['d_v'], use_positional_encoding=self.use_positional_encoding, iteration_count=self.iteration_count, aggregations=["mean","max","min","std"], fc_size=parameters['fc_size'], d_ff=parameters['d_ff'] , do_regression=self.data_processor.task_name=='performance_prediction')
         else:
             print('Training with externally specified parameters')
-            self.model=OptTransStats(dls.vars, dls.c, dls.len, n_heads=self.n_heads, n_layers=self.n_layers, d_model=self.d_model, d_k=self.d_k, d_v=self.d_v, use_positional_encoding=self.use_positional_encoding, iteration_count=self.iteration_count, aggregations=self.aggregations, dropout=self.dropout, fc_dropout=self.fc_dropout, do_regression=self.data_processor.task_name=='performance_prediction')
+            if self.model is None:
+                print('No pretrained model provided. Reinitializing model from scratch')
+                self.model=OptTransStats(dls.vars, dls.c, dls.len, n_heads=self.n_heads, n_layers=self.n_layers, d_model=self.d_model, d_k=self.d_k, d_v=self.d_v, use_positional_encoding=self.use_positional_encoding, iteration_count=self.iteration_count, aggregations=self.aggregations, dropout=self.dropout, fc_dropout=self.fc_dropout, do_regression=self.data_processor.task_name=='performance_prediction')
+                print(self.model)
         print(self.model.parameters() )
         total_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
         print("Total parameters with gradient")
@@ -155,7 +166,6 @@ class UniversalRunner():
         if self.data_processor.task_name!='performance_prediction':
             self.learner = Learner(dls, self.model, loss_func=CrossEntropyLoss(), metrics=[ accuracy],  cbs=callbacks)
         else:
-            #self.learner = Learner(dls, self.model, loss_func=calculate_loss_torch, metrics=[weighted_mse, mse, calculate_misrankings_score, calculate_loss], cbs=callbacks) 
             self.learner = Learner(dls, self.model, loss_func=calculate_loss_torch, metrics=[mse,calculate_loss_torch], cbs=callbacks) 
 
         start = time.time()
@@ -192,6 +202,7 @@ class UniversalRunner():
             
         data = self.data_processor.run(sample_df, self.train_seeds, self.val_seeds, self.id_names)
         print(data.keys())
+        print(data['train'].y)
         dsets = {split_name: TSDatasets(np.swapaxes(split_data.x,1,2),split_data.y) for split_name, split_data in data.items()}
         
         dls = TSDataLoaders.from_dsets(dsets['train'], dsets['val'], bs=self.batch_size)

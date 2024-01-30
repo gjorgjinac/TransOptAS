@@ -1,0 +1,191 @@
+,test_benchmark,model,score,value,train_benchmark,fold,sample_count_dimension_factor,budget
+0,train,transformer,MSE,0.10632145404815674,random_no_constants,0,50,50
+1,train,transformer,Misrankings score,0.7727771679473107,random_no_constants,0,50,50
+2,train,transformer,Loss,0.9445037525221341,random_no_constants,0,50,50
+3,train,dummy,MSE,0.1278882473707199,random_no_constants,0,50,50
+4,train,dummy,Misrankings score,0.7467069154774972,random_no_constants,0,50,50
+5,train,dummy,Loss,0.9445037525221341,random_no_constants,0,50,50
+6,val,transformer,MSE,0.10949946939945221,random_no_constants,0,50,50
+7,val,transformer,Misrankings score,0.7761660978384528,random_no_constants,0,50,50
+8,val,transformer,Loss,0.9463471985654776,random_no_constants,0,50,50
+9,val,dummy,MSE,0.130102276802063,random_no_constants,0,50,50
+10,val,dummy,Misrankings score,0.7534129692832765,random_no_constants,0,50,50
+11,val,dummy,Loss,0.9463471985654776,random_no_constants,0,50,50
+12,test,transformer,MSE,0.10874193161725998,random_no_constants,0,50,50
+13,test,transformer,Misrankings score,0.7916666666666666,random_no_constants,0,50,50
+14,test,transformer,Loss,0.9582801265550177,random_no_constants,0,50,50
+15,test,dummy,MSE,0.12448644638061523,random_no_constants,0,50,50
+16,test,dummy,Misrankings score,0.7687074829931972,random_no_constants,0,50,50
+17,test,dummy,Loss,0.9582801265550177,random_no_constants,0,50,50
+18,test,ELA,Loss,0.9573328997529016,random_no_constants,0,50,50
+0,train,transformer,MSE,0.09902052581310272,random_no_constants,1,50,50
+1,train,transformer,Misrankings score,0.7781741675814123,random_no_constants,1,50,50
+2,train,transformer,Loss,0.9422631551966469,random_no_constants,1,50,50
+3,train,dummy,MSE,0.1288815438747406,random_no_constants,1,50,50
+4,train,dummy,Misrankings score,0.74807903402854,random_no_constants,1,50,50
+5,train,dummy,Loss,0.9422631551966469,random_no_constants,1,50,50
+6,val,transformer,MSE,0.09991051256656647,random_no_constants,1,50,50
+7,val,transformer,Misrankings score,0.7832764505119454,random_no_constants,1,50,50
+8,val,transformer,Loss,0.9616919148942477,random_no_constants,1,50,50
+9,val,dummy,MSE,0.1233169287443161,random_no_constants,1,50,50
+10,val,dummy,Misrankings score,0.7588168373151308,random_no_constants,1,50,50
+11,val,dummy,Loss,0.9616919148942477,random_no_constants,1,50,50
+12,test,transformer,MSE,0.10475443303585052,random_no_constants,1,50,50
+13,test,transformer,Misrankings score,0.7729591836734694,random_no_constants,1,50,50
+14,test,transformer,Loss,0.9332309661385807,random_no_constants,1,50,50
+15,test,dummy,MSE,0.13567179441452026,random_no_constants,1,50,50
+16,test,dummy,Misrankings score,0.7397959183673469,random_no_constants,1,50,50
+17,test,dummy,Loss,0.9332309661385807,random_no_constants,1,50,50
+18,test,ELA,Loss,0.9324992458102727,random_no_constants,1,50,50
+0,train,transformer,MSE,0.10624493658542633,random_no_constants,2,50,50
+1,train,transformer,Misrankings score,0.7736919136480058,random_no_constants,2,50,50
+2,train,transformer,Loss,0.9503297591666119,random_no_constants,2,50,50
+3,train,dummy,MSE,0.12650243937969208,random_no_constants,2,50,50
+4,train,dummy,Misrankings score,0.7502744237102086,random_no_constants,2,50,50
+5,train,dummy,Loss,0.9503297591666119,random_no_constants,2,50,50
+6,val,transformer,MSE,0.11322781443595886,random_no_constants,2,50,50
+7,val,transformer,Misrankings score,0.7755972696245734,random_no_constants,2,50,50
+8,val,transformer,Loss,0.9338741005060339,random_no_constants,2,50,50
+9,val,dummy,MSE,0.12958374619483948,random_no_constants,2,50,50
+10,val,dummy,Misrankings score,0.752844141069397,random_no_constants,2,50,50
+11,val,dummy,Loss,0.9338741005060339,random_no_constants,2,50,50
+12,test,transformer,MSE,0.12354698777198792,random_no_constants,2,50,50
+13,test,transformer,Misrankings score,0.7636054421768708,random_no_constants,2,50,50
+14,test,transformer,Loss,0.941414062047851,random_no_constants,2,50,50
+15,test,dummy,MSE,0.13875426352024078,random_no_constants,2,50,50
+16,test,dummy,Misrankings score,0.7372448979591837,random_no_constants,2,50,50
+17,test,dummy,Loss,0.941414062047851,random_no_constants,2,50,50
+18,test,ELA,Loss,0.9400336735061682,random_no_constants,2,50,50
+0,train,transformer,MSE,0.1002848818898201,random_no_constants,3,50,50
+1,train,transformer,Misrankings score,0.7787230150018295,random_no_constants,3,50,50
+2,train,transformer,Loss,0.9475868454931208,random_no_constants,3,50,50
+3,train,dummy,MSE,0.12734127044677734,random_no_constants,3,50,50
+4,train,dummy,Misrankings score,0.7518294914013904,random_no_constants,3,50,50
+5,train,dummy,Loss,0.9475868454931208,random_no_constants,3,50,50
+6,val,transformer,MSE,0.10740846395492554,random_no_constants,3,50,50
+7,val,transformer,Misrankings score,0.7716154721274175,random_no_constants,3,50,50
+8,val,transformer,Loss,0.9446306594749448,random_no_constants,3,50,50
+9,val,dummy,MSE,0.1289505809545517,random_no_constants,3,50,50
+10,val,dummy,Misrankings score,0.75,random_no_constants,3,50,50
+11,val,dummy,Loss,0.9446306594749448,random_no_constants,3,50,50
+12,test,transformer,MSE,0.10221272706985474,random_no_constants,3,50,50
+13,test,transformer,Misrankings score,0.7746598639455783,random_no_constants,3,50,50
+14,test,transformer,Loss,0.9347520475443778,random_no_constants,3,50,50
+15,test,dummy,MSE,0.13331599533557892,random_no_constants,3,50,50
+16,test,dummy,Misrankings score,0.7312925170068028,random_no_constants,3,50,50
+17,test,dummy,Loss,0.9347520475443778,random_no_constants,3,50,50
+18,test,ELA,Loss,0.9356895522971344,random_no_constants,3,50,50
+0,train,transformer,MSE,0.09658901393413544,random_no_constants,4,50,50
+1,train,transformer,Misrankings score,0.7792718624222467,random_no_constants,4,50,50
+2,train,transformer,Loss,0.943145313714484,random_no_constants,4,50,50
+3,train,dummy,MSE,0.12858906388282776,random_no_constants,4,50,50
+4,train,dummy,Misrankings score,0.7485364068788877,random_no_constants,4,50,50
+5,train,dummy,Loss,0.943145313714484,random_no_constants,4,50,50
+6,val,transformer,MSE,0.0994967371225357,random_no_constants,4,50,50
+7,val,transformer,Misrankings score,0.7824232081911263,random_no_constants,4,50,50
+8,val,transformer,Loss,0.9521656944211827,random_no_constants,4,50,50
+9,val,dummy,MSE,0.12708155810832977,random_no_constants,4,50,50
+10,val,dummy,Misrankings score,0.7536973833902162,random_no_constants,4,50,50
+11,val,dummy,Loss,0.9521656944211827,random_no_constants,4,50,50
+12,test,transformer,MSE,0.10197040438652039,random_no_constants,4,50,50
+13,test,transformer,Misrankings score,0.7814625850340136,random_no_constants,4,50,50
+14,test,transformer,Loss,0.9535119476575442,random_no_constants,4,50,50
+15,test,dummy,MSE,0.12696810066699982,random_no_constants,4,50,50
+16,test,dummy,Misrankings score,0.7508503401360545,random_no_constants,4,50,50
+17,test,dummy,Loss,0.9535119476575442,random_no_constants,4,50,50
+18,test,ELA,Loss,0.9535006960862257,random_no_constants,4,50,50
+0,train,transformer,MSE,0.09848534315824509,random_no_constants,5,50,50
+1,train,transformer,Misrankings score,0.7783571167215514,random_no_constants,5,50,50
+2,train,transformer,Loss,0.9466171545836775,random_no_constants,5,50,50
+3,train,dummy,MSE,0.12744778394699097,random_no_constants,5,50,50
+4,train,dummy,Misrankings score,0.7497255762897914,random_no_constants,5,50,50
+5,train,dummy,Loss,0.9466171545836775,random_no_constants,5,50,50
+6,val,transformer,MSE,0.10309028625488281,random_no_constants,5,50,50
+7,val,transformer,Misrankings score,0.7818543799772468,random_no_constants,5,50,50
+8,val,transformer,Loss,0.9416279228477838,random_no_constants,5,50,50
+9,val,dummy,MSE,0.1302487701177597,random_no_constants,5,50,50
+10,val,dummy,Misrankings score,0.7517064846416383,random_no_constants,5,50,50
+11,val,dummy,Loss,0.9416279228477838,random_no_constants,5,50,50
+12,test,transformer,MSE,0.10419394075870514,random_no_constants,5,50,50
+13,test,transformer,Misrankings score,0.7653061224489796,random_no_constants,5,50,50
+14,test,transformer,Loss,0.9527437847919389,random_no_constants,5,50,50
+15,test,dummy,MSE,0.12796097993850708,random_no_constants,5,50,50
+16,test,dummy,Misrankings score,0.7457482993197279,random_no_constants,5,50,50
+17,test,dummy,Loss,0.9527437847919389,random_no_constants,5,50,50
+18,test,ELA,Loss,0.9550895137062444,random_no_constants,5,50,50
+0,train,transformer,MSE,0.10158997774124146,random_no_constants,6,50,50
+1,train,transformer,Misrankings score,0.774240761068423,random_no_constants,6,50,50
+2,train,transformer,Loss,0.9480580162388849,random_no_constants,6,50,50
+3,train,dummy,MSE,0.12700603902339935,random_no_constants,6,50,50
+4,train,dummy,Misrankings score,0.750182949140139,random_no_constants,6,50,50
+5,train,dummy,Loss,0.9480580162388849,random_no_constants,6,50,50
+6,val,transformer,MSE,0.11023615300655365,random_no_constants,6,50,50
+7,val,transformer,Misrankings score,0.7696245733788396,random_no_constants,6,50,50
+8,val,transformer,Loss,0.9409065645636668,random_no_constants,6,50,50
+9,val,dummy,MSE,0.12996692955493927,random_no_constants,6,50,50
+10,val,dummy,Misrankings score,0.7480091012514221,random_no_constants,6,50,50
+11,val,dummy,Loss,0.9409065645636668,random_no_constants,6,50,50
+12,test,transformer,MSE,0.10831400752067566,random_no_constants,6,50,50
+13,test,transformer,Misrankings score,0.7780612244897959,random_no_constants,6,50,50
+14,test,transformer,Loss,0.9415063665200223,random_no_constants,6,50,50
+15,test,dummy,MSE,0.13281472027301788,random_no_constants,6,50,50
+16,test,dummy,Misrankings score,0.7525510204081632,random_no_constants,6,50,50
+17,test,dummy,Loss,0.9415063665200223,random_no_constants,6,50,50
+18,test,ELA,Loss,0.9460018308067528,random_no_constants,6,50,50
+0,train,transformer,MSE,0.10802343487739563,random_no_constants,7,50,50
+1,train,transformer,Misrankings score,0.7749725576289791,random_no_constants,7,50,50
+2,train,transformer,Loss,0.9476198455638062,random_no_constants,7,50,50
+3,train,dummy,MSE,0.1271563470363617,random_no_constants,7,50,50
+4,train,dummy,Misrankings score,0.7514635931211123,random_no_constants,7,50,50
+5,train,dummy,Loss,0.9476198455638062,random_no_constants,7,50,50
+6,val,transformer,MSE,0.1078232079744339,random_no_constants,7,50,50
+7,val,transformer,Misrankings score,0.7770193401592719,random_no_constants,7,50,50
+8,val,transformer,Loss,0.9488066686213156,random_no_constants,7,50,50
+9,val,dummy,MSE,0.1288941353559494,random_no_constants,7,50,50
+10,val,dummy,Misrankings score,0.7463026166097838,random_no_constants,7,50,50
+11,val,dummy,Loss,0.9488066686213156,random_no_constants,7,50,50
+12,test,transformer,MSE,0.11544369161128998,random_no_constants,7,50,50
+13,test,transformer,Misrankings score,0.7721088435374149,random_no_constants,7,50,50
+14,test,transformer,Loss,0.9219598664802858,random_no_constants,7,50,50
+15,test,dummy,MSE,0.1347942352294922,random_no_constants,7,50,50
+16,test,dummy,Misrankings score,0.7457482993197279,random_no_constants,7,50,50
+17,test,dummy,Loss,0.9219598664802858,random_no_constants,7,50,50
+18,test,ELA,Loss,0.9248130984590056,random_no_constants,7,50,50
+0,train,transformer,MSE,0.0988517478108406,random_no_constants,8,50,50
+1,train,transformer,Misrankings score,0.7824734723746798,random_no_constants,8,50,50
+2,train,transformer,Loss,0.9440760241367028,random_no_constants,8,50,50
+3,train,dummy,MSE,0.12869793176651,random_no_constants,8,50,50
+4,train,dummy,Misrankings score,0.7504573728503476,random_no_constants,8,50,50
+5,train,dummy,Loss,0.9440760241367028,random_no_constants,8,50,50
+6,val,transformer,MSE,0.10335472226142883,random_no_constants,8,50,50
+7,val,transformer,Misrankings score,0.7716154721274175,random_no_constants,8,50,50
+8,val,transformer,Loss,0.9528568239158784,random_no_constants,8,50,50
+9,val,dummy,MSE,0.12773971259593964,random_no_constants,8,50,50
+10,val,dummy,Misrankings score,0.7431740614334471,random_no_constants,8,50,50
+11,val,dummy,Loss,0.9528568239158784,random_no_constants,8,50,50
+12,test,transformer,MSE,0.0992334634065628,random_no_constants,8,50,50
+13,test,transformer,Misrankings score,0.7891156462585034,random_no_constants,8,50,50
+14,test,transformer,Loss,0.9427938034066559,random_no_constants,8,50,50
+15,test,dummy,MSE,0.12451212108135223,random_no_constants,8,50,50
+16,test,dummy,Misrankings score,0.7644557823129252,random_no_constants,8,50,50
+17,test,dummy,Loss,0.9427938034066559,random_no_constants,8,50,50
+18,test,ELA,Loss,0.9415379537733898,random_no_constants,8,50,50
+0,train,transformer,MSE,0.10181745886802673,random_no_constants,9,50,50
+1,train,transformer,Misrankings score,0.776344676180022,random_no_constants,9,50,50
+2,train,transformer,Loss,0.9462908856744161,random_no_constants,9,50,50
+3,train,dummy,MSE,0.12813794612884521,random_no_constants,9,50,50
+4,train,dummy,Misrankings score,0.7496341017197219,random_no_constants,9,50,50
+5,train,dummy,Loss,0.9462908856744161,random_no_constants,9,50,50
+6,val,transformer,MSE,0.10484792292118073,random_no_constants,9,50,50
+7,val,transformer,Misrankings score,0.7815699658703071,random_no_constants,9,50,50
+8,val,transformer,Loss,0.9473306326073319,random_no_constants,9,50,50
+9,val,dummy,MSE,0.12745080888271332,random_no_constants,9,50,50
+10,val,dummy,Misrankings score,0.7511376564277589,random_no_constants,9,50,50
+11,val,dummy,Loss,0.9473306326073319,random_no_constants,9,50,50
+12,test,transformer,MSE,0.10505396872758865,random_no_constants,9,50,50
+13,test,transformer,Misrankings score,0.7721088435374149,random_no_constants,9,50,50
+14,test,transformer,Loss,0.9387268155755046,random_no_constants,9,50,50
+15,test,dummy,MSE,0.13014934957027435,random_no_constants,9,50,50
+16,test,dummy,Misrankings score,0.7482993197278912,random_no_constants,9,50,50
+17,test,dummy,Loss,0.9387268155755046,random_no_constants,9,50,50
+18,test,ELA,Loss,0.9398173368245248,random_no_constants,9,50,50

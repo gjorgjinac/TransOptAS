@@ -21,3 +21,6 @@ The training can be executed with the script transformer_performance_prediction_
 For example, to run the code with dimension 3, budget 30, sample count dimension factor 50, algorithms DE,GA,ES and PSO, and tuning enabled, the command would be:
 
 python transformer_selection.py --dimension 3 --budget 50 --sample_count_dimension_factor 50 --algorithms DE-GA-ES-PSO --tune 1
+
+
+We have to stress that in our experiments, we do not use parameter tuning since in our experiments, it had a detrimental effect on the results.
